@@ -126,4 +126,8 @@ Not doing in v0:
 - How are money, currency, and enforcement strength represented?
 - What are cancellation, cleanup, and partial-result semantics?
 - Which real agent and harness adapter should validate the design first?
-- What is the published Go module path?
+## Initial API increment
+
+The module path is `github.com/bboykarlito/libstall`, with package name `stall`. The first increment adds text-based `Task`, `Request`, and `Result` types, token-count `Usage`, and `Behaviour` (`Prepare`, `Validate`) and `Harness` (`Execute`) interfaces.
+
+These are experimental lifecycle contracts, not a complete execution API. Runner execution, constraints, capability checks, monetary cost, and usage availability remain unimplemented. In particular, zero token counts cannot yet distinguish unknown usage from actual zero usage.

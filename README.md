@@ -6,7 +6,20 @@ The name comes from **harness**: a **stall** sits one level above it. libstall s
 
 ## Status
 
-Design stage. No implementation, installable Go module, or build/test commands yet. The module path and exact public API remain undecided.
+Early API skeleton. The module is `github.com/bboykarlito/libstall`, with package name `stall` (Go 1.24.4 or later). Public types are experimental.
+
+Implemented: `Task`, `Request`, `Result`, `Usage`, and the `Behaviour` and `Harness` interfaces. Runner execution, constraints, capability checks, budget enforcement, and adapters are not implemented yet. Token usage currently cannot distinguish unavailable counts from zero; availability and monetary cost semantics remain open.
+
+## Development
+
+```sh
+git clone https://github.com/bboykarlito/libstall.git
+cd libstall
+go test ./...
+go vet ./...
+```
+
+There are no runtime tests yet; these commands currently check package compilation and static diagnostics.
 
 ## Intended usage
 
